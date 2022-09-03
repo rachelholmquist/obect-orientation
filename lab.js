@@ -4,7 +4,10 @@
   Give it a key of name with the value being your name, and another key of age with the value being your age.
 */
 
-//Code here
+const me = {
+  name: `Rachel`,
+  age: 30,
+}
 
 
 
@@ -15,21 +18,26 @@
 //name (a string), color (a string), age (a number),
 //and goodBoy/goodGirl (a boolean).
 
-//Code here
+const dog = {
+  name: `Rover`,
+  color: `black`,
+  age: 7,
+  goodGirl: true,
+}
 
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-//Code here
+console.log(dog.name);
 
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
+console.log([dog.color]);
 
 
 
@@ -39,14 +47,22 @@
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+const favoriteThings = {
+  band: `cage the elephant`,
+  food: `watermelon`,
+  person: `Sage`,
+  book: `You are a badass`,
+  movie: `The illusionist`,
+  holiday: `Birthday`,
+}
 
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
+favoriteThings.car = `Rogue`;
+favoriteThings.show = `Great british bakeoff`
 
 
 /*
@@ -54,7 +70,10 @@
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
+favoriteThings.food = `Chicken Nuggets`;
+favoriteThings.book = `Harry Potter`;
+
+console.log(favoriteThings);
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -72,7 +91,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const { color, model } = carDetails;
+console.log(color);
 
 
 
@@ -85,13 +105,12 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  const { title, firstName, lastName} = obj;
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
 
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
@@ -104,8 +123,20 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+const properties = {
+  utah: 40,
+  california: 20,
+  texas: 16,
+  arizona: 100,
+}
 
+const { utah, california, texas, arizona } = properties;
+
+function totalPopulation(obj){
+  return utah + california + texas + arizona
+}
+
+console.log(totalPopulation(properties));
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
