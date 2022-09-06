@@ -148,8 +148,20 @@ console.log(totalPopulation(properties));
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+const elementsOfFood = {
+  carb: `flour`,
+  fat: 'butter',
+  protein: 'whey'
+}
 
-//Code Here
+function ingredients (obj){
+  const { carb, fat, protein } = obj;
+  let ingredientArray = [];
+  ingredientArray.push(carb, fat, protein);
+  return ingredientArray;
+}
+
+console.log(ingredients(elementsOfFood));
 
 
 
@@ -171,7 +183,10 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+user.name = 'bryan G. Smith';
+user.email = 'bryan.smith@devmounta.in';
+
+console.log(user);
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -179,7 +194,7 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
+delete user.age;
 
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
@@ -189,9 +204,16 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor(name, age, color){
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
-
+const myCat = new Cat('rocco', 45, 'black');
+console.log(myCat.name);
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -201,7 +223,21 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+  constructor(name, age, favoriteSpell){
+  this.name = name;
+  this.age = age;
+  this.favoriteSpell = favoriteSpell;
+  }
+
+  castSpell(){
+  console.log(`${this.name} has cast ${this.favoriteSpell}`);
+  }
+}
+
+const tallWizard = new Wizard('Slim', 49, 'Shrinkray');
+tallWizard.castSpell();
+
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -226,7 +262,25 @@ var user = {
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+  constructor(brand, model, storage, color, price, sold){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+
+  sell(){
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+
+  changePrice(newPrice){
+    this.price = newPrice;
+  }
+}
 
   
 /*
@@ -239,7 +293,16 @@ var user = {
     - price: number
 */
 
-//Code Here
+const samsung = new Phone(`Samsung`, `S85`, 864, `black`, 699.99, false);
+samsung.sell();
+console.log(samsung);
+
+const pinkPhone = new Phone(`Apple`, `2.0`, 45, `pink`, 899.99, false);
+console.log(pinkPhone);
+
+const flipPhone = new Phone(`sidekick`, `flipphone`, 456, `yellow`, 459.99, false);
+console.log(flipPhone);
+
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -248,7 +311,8 @@ var user = {
   Then console.log that object to see the price change
 */ 
 
-//Code Here 
+flipPhone.changePrice(199.99);
+console.log(flipPhone);
 
 
 /*
@@ -257,7 +321,8 @@ var user = {
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here 
+pinkPhone.sell();
+console.log(pinkPhone);
 
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
@@ -276,7 +341,8 @@ const colors = {
 }
 //do not edit this object
 
-//Code Here 
+const colorsCopy = ({...colors});
+console.log(colorsCopy);
 
 
 
@@ -304,7 +370,8 @@ const shippingInfo = {
 }
 //do not edit the objects above
 
-//Code Here
+helensInfo = ({...contactInfo, ...shippingInfo});
+console.log(helensInfo);
 
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
@@ -322,14 +389,27 @@ const shippingInfo = {
   And finally, print the value of the mileage.
 */
 
-//Code Here 
+class Vehicle{
+  constructor(capacity, color, mileage){
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
+
+  move(miles){
+    this.mileage += miles;
+  }
+}
 
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
-//Code Here
+const myNewVehicle = new Vehicle(6, `blue`, 1670);
+console.log(myNewVehicle);
+myNewVehicle.move(330);
+console.log(myNewVehicle)
 
 
 /* 
