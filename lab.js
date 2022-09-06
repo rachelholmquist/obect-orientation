@@ -407,9 +407,8 @@ class Vehicle{
 */
 
 const myNewVehicle = new Vehicle(6, `blue`, 1670);
-console.log(myNewVehicle);
 myNewVehicle.move(330);
-console.log(myNewVehicle)
+console.log(myNewVehicle);
 
 
 /* 
